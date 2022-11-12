@@ -27,9 +27,8 @@ test_data = datasets.FashionMNIST(
                 train=False,
                 download=True,
                 transform = ToTensor())
-def create_dataloaders:
-  trainLoader = DataLoader(train_data,batch_size=64)
-  testLoader = DataLoader(test_data,batch_size=64)
+trainLoader = DataLoader(train_data,batch_size=64)
+testLoader = DataLoader(test_data,batch_size=64)
 
 for X, y in testLoader:
     print(f"Shape of X [N, C, H, W]: {X.shape}")
