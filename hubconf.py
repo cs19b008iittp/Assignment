@@ -1,5 +1,6 @@
-!python -m pip install --upgrade pip
-!pip install torchmetrics
+python -m pip install --upgrade pip
+pip install torchmetrics
+
 import torch
 from torch import nn
 from torch.utils.data import DataLoader
