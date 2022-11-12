@@ -98,7 +98,8 @@ def test(dataloader, model, loss_fn):
     
     f1_score = F1Score(average = 'macro', num_classes = num_classes).to(device)
     print(f'f1_score : {f1_score(ypred,ytrue).item(): .4f}')
- class mynet(nn.Module):
+ 
+class mynet(nn.Module):
     def __init__(self,num_channels,num_classes,h,w,config):
         super(mynet,self).__init__()
         
@@ -138,7 +139,8 @@ def test(dataloader, model, loss_fn):
     def forward(self,x):
         x = self.net_stack(x)
         return x
- def get_model(trainloader,config,epochs,learning_rate):
+    
+def get_model(trainloader,config,epochs,learning_rate):
     
     N , num_channels , height , width = next(iter(trainloader))[0].shape
     num_classes = len(trainloader.dataset.classes)
@@ -148,6 +150,7 @@ def test(dataloader, model, loss_fn):
     train(trainloader,my_model,epochs,learning_rate)
     
     return my_model
+  
 config = [(1,20,(5,5),1,'same'), (20,40,(5,5),1,'same'),(40,60,(5,5),1,'same')]
 my_model = get_model(trainLoader,config,epochs=5,learning_rate=1e-4)
 print(my_model)
