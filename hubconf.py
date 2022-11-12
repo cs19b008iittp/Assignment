@@ -98,7 +98,7 @@ def test(dataloader, model, loss_fn):
     
     f1_score = F1Score(average = 'macro', num_classes = num_classes).to(device)
     print(f'f1_score : {f1_score(ypred,ytrue).item(): .4f}')
- 
+    
 class mynet(nn.Module):
     def __init__(self,num_channels,num_classes,h,w,config):
         super(mynet,self).__init__()
