@@ -132,7 +132,6 @@ class mynet(nn.Module):
                 self.num_params_first_fc = num_out_channels
 
         self.net_stack.append(nn.Flatten())
-        test(testLoader,my_model,loss_fn)
         self.net_stack.append(nn.Linear(self.num_params_first_fc*h*w,num_classes).to(device))
         self.net_stack.append(nn.Softmax(1))
     
