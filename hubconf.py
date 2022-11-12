@@ -1,7 +1,5 @@
-
-pip install torchmetrics
-
 import torch
+!pip install torchmetrics
 from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets
